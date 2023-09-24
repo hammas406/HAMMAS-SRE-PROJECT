@@ -1616,6 +1616,16 @@
 	</CODE>
 </ACTION>
 
+	<ACTION NAME="SubmitBug">
+		<CODE>
+			import java.awt.Desktop;
+			if (Desktop.isDesktopSupported())
+			{
+			Desktop.getDesktop().browse(new URI("https://sourceforge.net/p/jedit/bugs/"));
+			}
+		</CODE>
+	</ACTION>
+
 <ACTION NAME="userFeedback">
 	<CODE>
 		import java.awt.Desktop;
