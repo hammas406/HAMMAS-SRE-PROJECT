@@ -561,6 +561,9 @@ public class HyperSearchResults extends JPanel implements DefaultFocusComponent
 		{
 			String s = super.convertValueToText(value, selected, expanded, leaf,
 				row, hasFocus);
+			if (s.contains("//") || s.contains("/*") || s.contains("*") ) {
+				return "<html><span style='background-color: #00FF00;' >" + s + "</span></html>";
+		}
 			String newProp = jEdit.getProperty(HIGHLIGHT_PROP);
 			if (newProp == null || newProp.isEmpty())
 				return s;

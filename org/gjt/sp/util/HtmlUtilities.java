@@ -112,7 +112,7 @@ public class HtmlUtilities
 	 */
 	public static String highlightString(String s, String styleTag, List<Integer> ranges)
 	{
-		StringBuilder sb = new StringBuilder("<html><style>.highlight {");
+		StringBuilder sb = new StringBuilder("<html><style>.highlightcolor {background-color:red; } </style>");
 		sb.append(styleTag);
 		sb.append("}</style><body>");
 		int lastIndex = 0;
@@ -121,7 +121,7 @@ public class HtmlUtilities
 			int rangeStart = ranges.get(i);
 			int rangeEnd = ranges.get(i + 1);
 			appendString2html(sb, s.substring(lastIndex, rangeStart));
-			sb.append("<span class=\"highlight\">");
+			sb.append("<span class=\"highlightcolor\">");
 			appendString2html(sb, s.substring(rangeStart, rangeEnd));
 			sb.append("</span>");
 			lastIndex = rangeEnd;
